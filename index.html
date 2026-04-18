@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yadhukrishna MP | AI Artist & AI Video Creator</title>
+  <meta name="description" content="Portfolio website of Yadhukrishna MP, AI Artist, AI Video Creator, and visual storyteller creating cinematic AI-assisted videos, comic concepts, and digital design work." />
+  <meta name="author" content="Yadhukrishna MP" />
+
+  <meta property="og:title" content="Yadhukrishna MP | AI Artist Portfolio" />
+  <meta property="og:description" content="AI-assisted videos, cinematic visual storytelling, comic work, design projects, and creative portfolio links." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #090b10;
+      --panel: #111620;
+      --panel-soft: #151c29;
+      --text: #f4f7fb;
+      --muted: #a8b3c7;
+      --line: rgba(255,255,255,0.12);
+      --accent: #7c5cff;
+      --accent-2: #00d4ff;
+      --gold: #ffcc66;
+      --shadow: 0 20px 55px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,0.28), transparent 32rem),
+        radial-gradient(circle at top right, rgba(0,212,255,0.18), transparent 26rem),
+        linear-gradient(180deg, #080a0f 0%, #0c1018 45%, #090b10 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9, 11, 16, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 12px 30px rgba(124,92,255,0.35);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 86px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #ffffff, #c8c0ff 40%, #73ecff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      max-width: 760px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 13px 18px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      transition: 180ms ease;
+      min-height: 48px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 0;
+      color: white;
+      box-shadow: 0 16px 36px rgba(0,212,255,0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px -40px auto auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(124,92,255,0.28);
+      filter: blur(36px);
+    }
+
+    .stat {
+      position: relative;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-bottom: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+
+    .sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 740px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(17,22,32,0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #d9e2f7;
+      background: rgba(255,255,255,0.04);
+      font-size: 13px;
+    }
+
+    .work-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .thumb {
+      min-height: 230px;
+      background:
+        linear-gradient(135deg, rgba(124,92,255,0.50), rgba(0,212,255,0.28)),
+        radial-gradient(circle at 70% 20%, rgba(255,204,102,0.34), transparent 32%),
+        #151c29;
+      display: flex;
+      align-items: end;
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .thumb.onam {
+      min-height: 340px;
+      align-items: stretch;
+      padding: 0;
+      background: #151c29;
+    }
+
+    .thumb.onam img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumb-label {
+      background: rgba(0,0,0,0.42);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 12px 14px;
+      color: white;
+      font-weight: 800;
+    }
+
+    .work-body {
+      padding: 22px;
+    }
+
+    .link-line {
+      margin-top: 16px;
+      display: inline-flex;
+      color: #a9f4ff;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .time {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 4px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(124,92,255,0.25), transparent 30rem),
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035));
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="brand" aria-label="Yadhukrishna MP home">
+        <span class="logo">Y</span>
+        <span>Yadhukrishna MP</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#background">Background</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="pill">AI Artist • AI Video Creator • Visual Storytelling</div>
+          <h1><span class="gradient">Cinematic AI visuals</span> for short-form stories.</h1>
+          <p class="lead">
+            I create AI-assisted videos, comic concepts, science and mystery explainers, and visual content built around strong hooks, cinematic mood, and fast viewer engagement.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="portfolio.pdf" target="_blank" rel="noopener">View Portfolio PDF</a>
+            <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+            <a class="btn" href="http://www.youtube.com/@DEVCOOK-d5c" target="_blank" rel="noopener">YouTube Channel</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Quick highlights">
+          <div class="stat">
+            <strong>AI Video</strong>
+            <span>Concept, prompts, visuals, edit flow</span>
+          </div>
+          <div class="stat">
+            <strong>Comic + Design</strong>
+            <span>Sample comic PDF and festival poster work</span>
+          </div>
+          <div class="stat">
+            <strong>Tech Background</strong>
+            <span>Computer science + software experience</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>About Me</h2>
+            <p class="sub">
+              I work on AI-assisted content where an idea becomes a visual story: concept development, script shaping, prompt writing, AI-generated visuals, and editing for watchable short-form videos.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Visual Storytelling</h3>
+            <p>Turning abstract topics into clear, cinematic scenes with mood, camera direction, and strong visual continuity.</p>
+          </article>
+          <article class="card">
+            <h3>Hook-Driven Shorts</h3>
+            <p>Building short-form content around curiosity, mystery, science, and emotional viewer retention.</p>
+          </article>
+          <article class="card">
+            <h3>AI Production Workflow</h3>
+            <p>Using AI tools for ideation, prompt development, image/video generation, and editing support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Selected Work</h2>
+            <p class="sub">A few samples covering AI video concepts, comic storytelling, and digital design work.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card work-card">
+            <div class="thumb">
+              <div class="thumb-label">Science & Mystery AI Videos</div>
+            </div>
+            <div class="work-body">
+              <h3>ScienceRush / DEVCOOK YouTube Channel</h3>
+              <p>
+                AI-assisted short videos built around science, mystery, time, perception, unusual history, and cinematic explainer-style visuals.
+              </p>
+              <a class="link-line" href="http://www.youtube.com/@DEVCOOK-d5c" target="_blank" rel="noopener">Open YouTube Channel →</a>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="thumb">
+              <div class="thumb-label">Saanvi & Priya Comic Book</div>
+            </div>
+            <div class="work-body">
+              <h3>Sample Comic Book PDF</h3>
+              <p>
+                A short sample comic featuring Saanvi and Priya, created as a visual storytelling sample with character dialogue and shopping-mall scene flow.
+              </p>
+              <a class="link-line" href="https://raw.githubusercontent.com/Yadhump1990/sample-comic-book/main/sample-comic-book.pdf" target="_blank" rel="noopener">View Comic PDF →</a>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="thumb onam">
+              <img src="https://raw.githubusercontent.com/Yadhump1990/Onam-design-work/main/Red%20and%20Brown%20Onam%20Food%20Festival%20Instagram%20Post.png" alt="Onam Food Festival Instagram Post design preview" />
+            </div>
+            <div class="work-body">
+              <h3>Onam Food Festival Instagram Post</h3>
+              <p>
+                A festive social-media poster design for an Onam food festival theme, focused on cultural celebration, food presentation, and clean promotional layout.
+              </p>
+              <a class="link-line" href="https://github.com/Yadhump1990/Onam-design-work/blob/main/Red%20and%20Brown%20Onam%20Food%20Festival%20Instagram%20Post.png" target="_blank" rel="noopener">Open Design Work →</a>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="thumb">
+              <div class="thumb-label">Portfolio & Resume</div>
+            </div>
+            <div class="work-body">
+              <h3>Professional Profile</h3>
+              <p>
+                My background combines AI content creation, computer science, documentation, rig administration, and practical workflow organization.
+              </p>
+              <a class="link-line" href="portfolio.pdf" target="_blank" rel="noopener">Open Portfolio PDF →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Tools & Skills</h2>
+            <p class="sub">Creative production, AI prompting, editing, and technical support skills.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag-row">
+            <span class="tag">Prompt Writing</span>
+            <span class="tag">AI Visual Generation</span>
+            <span class="tag">AI Video Concepts</span>
+            <span class="tag">Cinematic Scene Design</span>
+            <span class="tag">YouTube Shorts</span>
+            <span class="tag">Visual Storytelling</span>
+            <span class="tag">CapCut</span>
+            <span class="tag">Canva</span>
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Sora / Grok Workflow</span>
+            <span class="tag">MS Excel</span>
+            <span class="tag">MS Word</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Professional Background</h2>
+            <p class="sub">A mix of creative AI work, documentation, administrative support, and software development experience.</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="time">2025 - 2026</div>
+            <div>
+              <h3>Rig Clerk — Kuwait Well Drilling Company</h3>
+              <p>Daily records, reports, documentation, data entry, crew attendance, and operational support.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="time">2022 - 2023</div>
+            <div>
+              <h3>Document Control Support — John Energy Limited</h3>
+              <p>Physical and digital document handling, tracking sheets, scanning, filing, reports, and office support.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="time">2021 - 2022</div>
+            <div>
+              <h3>Junior Software Programmer — Orion Informatics</h3>
+              <p>Worked on a full-stack airport staff software application using HTML, CSS, jQuery, Python, Django, and MySQL.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div class="contact-grid">
+            <div>
+              <h2>Let’s work together</h2>
+              <p class="sub">
+                I’m available for AI artist, AI video creator, visual storytelling, short-form content, and creative production opportunities.
+              </p>
+            </div>
+            <div class="cta-row">
+              <a class="btn primary" href="mailto:yadhump1990@gmail.com">Email Me</a>
+              <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+              <a class="btn" href="portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Yadhukrishna MP. Portfolio website for AI visual storytelling and creative work.
+    </div>
+  </footer>
+</body>
+</html>
